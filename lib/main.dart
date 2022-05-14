@@ -1,8 +1,11 @@
-import 'package:ahoy_hacks/screens/forgot_password.dart';
-import 'package:ahoy_hacks/screens/login_screen.dart';
+// import 'package:ahoy_hacks/screens/forgot_password.dart';
+// import 'package:ahoy_hacks/screens/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'screens/HomeScreen.dart';
+
+import 'screens/home_screen.dart';
 import 'screens/create_new_account.dart';
+import 'screens/forgot_password.dart';
+import 'screens/login_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -14,14 +17,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Ahoy Hacks",
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      home: LoginScreen(),
       routes: {
-        '/': (ctx) => HomeScreen(),
-        // '/': (ctx) => LoginScreen(),
-        // '/': (ctx) => ForgotPassword(),
-        // '/': (ctx) => CreateNewAccount(),
-        // '/': (ctx) => const HomeScreen()
-        // HomeScreen.routeName: (ctx) => HomeScreen()
+        LoginScreen.routeName: (ctx) => LoginScreen(),
+        CreateNewAccount.routeName: (ctx) => CreateNewAccount(),
+        ForgotPassword.routeName: (ctx) => ForgotPassword(),
+        HomeScreen.routeName: (ctx) => const HomeScreen(),
       },
     );
   }

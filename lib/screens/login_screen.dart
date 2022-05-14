@@ -3,10 +3,15 @@ import 'package:ahoy_hacks/widgets/rounded_button.dart';
 import 'package:ahoy_hacks/widgets/text_field_input.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../widgets/background_image.dart';
 
+import 'home_screen.dart';
+import 'create_new_account.dart';
+import 'forgot_password.dart';
+
 class LoginScreen extends StatelessWidget {
+  static const routeName = '/loginScreen';
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -44,7 +49,8 @@ class LoginScreen extends StatelessWidget {
                     inputAction: TextInputAction.done,
                   ),
                   GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, 'ForgotPassword'),
+                    onTap: () => Navigator.of(context)
+                        .pushNamed(ForgotPassword.routeName),
                     child: const Text(
                       'Forgot Password',
                       style: TextStyle(
@@ -54,8 +60,11 @@ class LoginScreen extends StatelessWidget {
                   const SizedBox(
                     height: 25,
                   ),
-                  const RoundedButton(
+                  RoundedButton(
                     buttonName: 'Login',
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(HomeScreen.routeName);
+                    },
                   ),
                   const SizedBox(
                     height: 10,
@@ -63,7 +72,8 @@ class LoginScreen extends StatelessWidget {
                 ],
               ),
               GestureDetector(
-                onTap: () => Navigator.pushNamed(context, 'CreateNewAccount'),
+                onTap: () =>
+                    Navigator.of(context).pushNamed(CreateNewAccount.routeName),
                 child: Container(
                   child: const Text(
                     'Create New Account',

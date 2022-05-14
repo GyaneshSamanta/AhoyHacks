@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:ahoy_hacks/widgets/background_image.dart';
 import 'package:ahoy_hacks/widgets/password_input.dart';
 import 'package:ahoy_hacks/widgets/rounded_button.dart';
@@ -6,7 +5,11 @@ import 'package:ahoy_hacks/widgets/text_field_input.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'home_screen.dart';
+
 class CreateNewAccount extends StatelessWidget {
+  static const routeName = '/createAccount';
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -23,10 +26,10 @@ class CreateNewAccount extends StatelessWidget {
                 ),
                 Stack(
                   children: [
-                    Center(
+                    const Center(
                       child: ClipOval(),
                     ),
-                    SizedBox(height: 95),
+                    const SizedBox(height: 95),
                     Positioned(
                       top: size.height * 0.18,
                       left: size.width * 0.56,
@@ -34,11 +37,11 @@ class CreateNewAccount extends StatelessWidget {
                         height: size.width * 0.1,
                         width: size.width * 0.1,
                         decoration: BoxDecoration(
-                          color: Color(0xff5663ff),
+                          color: const Color(0xff5663ff),
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.white, width: 2),
                         ),
-                        child: Icon(
+                        child: const Icon(
                           FontAwesomeIcons.arrowUp,
                           color: Colors.white,
                         ),
@@ -51,39 +54,44 @@ class CreateNewAccount extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    TextInputField(
+                    const TextInputField(
                       icon: FontAwesomeIcons.user,
                       hint: 'User',
                       inputType: TextInputType.name,
                       inputAction: TextInputAction.next,
                     ),
-                    TextInputField(
+                    const TextInputField(
                       icon: FontAwesomeIcons.envelope,
                       hint: 'Email',
                       inputType: TextInputType.emailAddress,
                       inputAction: TextInputAction.next,
                     ),
-                    PasswordInput(
+                    const PasswordInput(
                       icon: FontAwesomeIcons.lock,
                       hint: 'Password',
                       inputAction: TextInputAction.next,
                     ),
-                    PasswordInput(
+                    const PasswordInput(
                       icon: FontAwesomeIcons.lock,
                       hint: 'Confirm Password',
                       inputAction: TextInputAction.done,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
-                    RoundedButton(buttonName: 'Register'),
-                    SizedBox(
+                    RoundedButton(
+                      buttonName: 'Register',
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(HomeScreen.routeName);
+                      },
+                    ),
+                    const SizedBox(
                       height: 10,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                       const  Text(
                           'Already have an account?',
                           style: TextStyle(
                               fontSize: 17, color: Colors.white, height: 1.5),
@@ -92,7 +100,7 @@ class CreateNewAccount extends StatelessWidget {
                           onTap: () {
                             Navigator.pushNamed(context, '/');
                           },
-                          child: Text('Login',
+                          child: const Text('Login',
                               style: TextStyle(
                                   fontSize: 17,
                                   color: Color(0xff5663ff),
@@ -101,7 +109,7 @@ class CreateNewAccount extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                   ],

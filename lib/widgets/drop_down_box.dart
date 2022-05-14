@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class DropdownBox extends StatefulWidget {
-  const DropdownBox({Key? key, required this.title}) : super(key: key);
-  final String title;
+  DropdownBox({Key? key, required this.hintText}) : super(key: key);
+  String hintText;
 
   @override
   State<DropdownBox> createState() => _DropdownBoxState();
 }
 
 class _DropdownBoxState extends State<DropdownBox> {
-  String _dropdownValue = "Dash";
+  String? _dropdownValue;
   List<String> dropDownOptions = [
     "Dash",
     "Sparky",
@@ -28,12 +28,16 @@ class _DropdownBoxState extends State<DropdownBox> {
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.transparent,
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton(
-          hint: Text('Source'),
+          hint: Text(
+            widget.hintText,
+            style: const TextStyle(
+                color: Color(0xFFFFDBAF), fontWeight: FontWeight.bold),
+          ),
           focusColor: Colors.amber,
           dropdownColor: Colors.transparent,
           items: dropDownOptions.map<DropdownMenuItem<String>>((String mascot) {
@@ -45,12 +49,10 @@ class _DropdownBoxState extends State<DropdownBox> {
                 value: mascot);
           }).toList(),
           value: _dropdownValue,
-          iconEnabledColor: Color(0xff5663ff),
+          iconEnabledColor: Color(0xffFFDBAF),
           onChanged: dropdownCallback,
           style: const TextStyle(
-            color: Color(0xff5663ff),
-            fontWeight: FontWeight.bold
-          ),
+              color: Color(0xFFFFDBAF), fontWeight: FontWeight.bold),
         ),
       ),
     );

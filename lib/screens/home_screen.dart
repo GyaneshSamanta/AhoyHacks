@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   WebViewController? _webViewController;
   bool isLoading = false;
   bool isOnMap = true;
-  var url = 'https://www.maptoglobe.com/BJ2vHR3Iq';
+  var url = 'https://www.maptoglobe.com/H1PWi_TI5#q';
 
   String dropdownvalue = 'Item 1';
 
@@ -62,8 +62,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: const DropdownBox(
-                  title: 'Heyy',
+                child: DropdownBox(
+                  hintText: 'Source',
                 ),
               ),
             ),
@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: DropdownBox(
-                  title: 'Heyy',
+                  hintText: 'Destination',
                 ),
               ),
             ),
@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   setState(() {
                     url = isOnMap
                         ? 'https://flutter.dev'
-                        : 'https://www.maptoglobe.com/BJ2vHR3Iq';
+                        : 'https://www.maptoglobe.com/H1PWi_TI5#';
                     isOnMap = !isOnMap;
                     _webViewController!.loadUrl(url);
                   });
@@ -104,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   "Explore!",
                   style: TextStyle(fontSize: 9),
                 ),
-                backgroundColor: Colors.grey,
+                backgroundColor: Color(0xffAEAC70),
               ),
       ),
     );

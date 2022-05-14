@@ -6,6 +6,7 @@ import '../widgets/rounded_button.dart';
 import '../widgets/text_field_input.dart';
 
 class ForgotPassword extends StatelessWidget {
+  static const routeName = '/forgotPassword';
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -44,7 +45,7 @@ class ForgotPassword extends StatelessWidget {
                     SizedBox(
                       height: size.height * 0.28,
                     ),
-                    Container(
+                    SizedBox(
                       width: size.width * 0.8,
                       child: const Text(
                         'Enter your email we will send instruction to reset your password',
@@ -68,7 +69,10 @@ class ForgotPassword extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    const RoundedButton(buttonName: 'Send')
+                    RoundedButton(
+                      buttonName: 'Send',
+                      onPressed: () {},
+                    )
                   ],
                 ),
               )
