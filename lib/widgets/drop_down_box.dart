@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class DropdownBox extends StatefulWidget {
+  const DropdownBox({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<DropdownBox> createState() => _DropdownBoxState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _DropdownBoxState extends State<DropdownBox> {
   String _dropdownValue = "Dash";
   List<String> dropDownOptions = [
     "Dash",
@@ -28,11 +28,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [
-          Colors.white.withOpacity(0.2),
-          Colors.white.withOpacity(0.05),
-        ]),
+      decoration: const BoxDecoration(
+        color: Colors.black,
+        // gradient: LinearGradient(colors: [
+        //   Colors.white.withOpacity(0.2),
+        //   Colors.white.withOpacity(0.05),
+        // ]),
       ),
       child: DropdownButton(
         items: dropDownOptions.map<DropdownMenuItem<String>>((String mascot) {

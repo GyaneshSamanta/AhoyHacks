@@ -61,14 +61,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                           color: Colors.black,
                           blurRadius: 6,
                           spreadRadius: 0.5,
                           offset: Offset(0.7, 0.7))
                     ]),
-                child: MyHomePage(
+                child: const DropdownBox(
                   title: 'Heyy',
                 ),
               ),
@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: MyHomePage(
+                child: DropdownBox(
                   title: 'Heyy',
                 ),
               ),

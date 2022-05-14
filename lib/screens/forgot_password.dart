@@ -11,7 +11,7 @@ class ForgotPassword extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Stack(
       children: [
-        BackgroundImage(image: 'assets/images/login_bg.png'),
+        const BackgroundImage(image: 'assets/images/login_bg.png'),
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
@@ -21,12 +21,12 @@ class ForgotPassword extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back_ios,
                 color: Colors.white,
               ),
             ),
-            title: Text(
+            title: const Text(
               'Forgot Password',
               style: TextStyle(
                   fontSize: 32,
@@ -46,7 +46,7 @@ class ForgotPassword extends StatelessWidget {
                     ),
                     Container(
                       width: size.width * 0.8,
-                      child: Text(
+                      child: const Text(
                         'Enter your email we will send instruction to reset your password',
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -56,19 +56,19 @@ class ForgotPassword extends StatelessWidget {
                             fontWeight: FontWeight.w700),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    TextInputField(
+                    const TextInputField(
                       icon: FontAwesomeIcons.envelope,
                       hint: 'Email',
                       inputType: TextInputType.emailAddress,
                       inputAction: TextInputAction.done,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    RoundedButton(buttonName: 'Send')
+                    const RoundedButton(buttonName: 'Send')
                   ],
                 ),
               )

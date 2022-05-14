@@ -12,7 +12,7 @@ class CreateNewAccount extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Stack(
       children: [
-        BackgroundImage(image: 'assets/images/register_bg.png'),
+        const BackgroundImage(image: 'assets/images/register_bg.png'),
         Scaffold(
           backgroundColor: Colors.transparent,
           body: SingleChildScrollView(

@@ -11,14 +11,14 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        BackgroundImage(
+        const BackgroundImage(
           image: 'assets/images/login_bg.png',
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
           body: Column(
             children: [
-              Flexible(
+              const Flexible(
                 child: Center(
                   child: Text(
                     'Ahoy Hacks',
@@ -32,32 +32,32 @@ class LoginScreen extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  TextInputField(
+                  const TextInputField(
                     icon: FontAwesomeIcons.envelope,
                     hint: 'Email',
                     inputType: TextInputType.emailAddress,
                     inputAction: TextInputAction.next,
                   ),
-                  PasswordInput(
+                  const PasswordInput(
                     icon: FontAwesomeIcons.lock,
                     hint: 'Password',
                     inputAction: TextInputAction.done,
                   ),
                   GestureDetector(
                     onTap: () => Navigator.pushNamed(context, 'ForgotPassword'),
-                    child: Text(
+                    child: const Text(
                       'Forgot Password',
                       style: TextStyle(
                           fontSize: 17, color: Colors.white, height: 1.5),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 25,
                   ),
-                  RoundedButton(
+                  const RoundedButton(
                     buttonName: 'Login',
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                 ],
@@ -65,17 +65,17 @@ class LoginScreen extends StatelessWidget {
               GestureDetector(
                 onTap: () => Navigator.pushNamed(context, 'CreateNewAccount'),
                 child: Container(
-                  child: Text(
+                  child: const Text(
                     'Create New Account',
                     style: TextStyle(
                         fontSize: 15, color: Colors.white, height: 1.5),
                   ),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       border: Border(
                           bottom: BorderSide(width: 1, color: Colors.white))),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
             ],
