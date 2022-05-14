@@ -1,8 +1,9 @@
 import 'dart:io';
-import 'package:ahoy_hacks/widgets/drop_down_box.dart';
+import '../widgets/drop_down_box.dart';
 import 'package:flutter/material.dart';
-
 import 'package:webview_flutter/webview_flutter.dart';
+
+import 'details_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = '/homeScreen';
@@ -82,10 +83,22 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-        floatingActionButton: isLoading
-            ? const CircularProgressIndicator()
-            : FloatingActionButton(
-                onPressed: () {
+        floatingActionButton: Padding(
+          padding: const EdgeInsets.fromLTRB(40, 0, 0, 30),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              FloatingActionButton(
+                onPressed: isLoading ? null : () {
+                  Navigator.of(context).pushNamed(DetailsScreen.routeName);
+                },
+                child: const Icon(Icons.question_mark),
+                backgroundColor: const Color(0xffAEAC70),
+              ),
+              FloatingActionButton(
+                onPressed: isLoading
+                    ? null
+                    : () {
                   setState(() {
                     isLoading = true;
                   });
@@ -104,8 +117,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   "Explore!",
                   style: TextStyle(fontSize: 9),
                 ),
-                backgroundColor: Color(0xffAEAC70),
+                backgroundColor: const Color(0xffAEAC70),
               ),
+            ],
+          ),
+        ),
       ),
     );
   }

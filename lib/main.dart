@@ -6,6 +6,7 @@ import 'screens/home_screen.dart';
 import 'screens/create_new_account.dart';
 import 'screens/forgot_password.dart';
 import 'screens/login_screen.dart';
+import 'screens/details_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         CreateNewAccount.routeName: (ctx) => CreateNewAccount(),
         ForgotPassword.routeName: (ctx) => ForgotPassword(),
         HomeScreen.routeName: (ctx) => const HomeScreen(),
+        DetailsScreen.routeName: (ctx) => const DetailsScreen()
       },
     );
   }
