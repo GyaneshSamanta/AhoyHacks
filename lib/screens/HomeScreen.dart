@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
 
@@ -14,8 +13,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final Completer<WebViewController> _controller =
-      Completer<WebViewController>();
+//   final Completer<WebViewController> _controller =
+//       Completer<WebViewController>();
+  WebViewController? _webViewController;
+  bool isLoading = false;
+  bool isOnMap = true;
+  var url = 'https://www.maptoglobe.com/BJ2vHR3Iq';
 
   @override
   void initState() {
@@ -28,10 +31,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: WebView(
-        initialUrl: 'https://www.maptoglobe.com/BJ2vHR3Iq',
+        initialUrl: url,
         javascriptMode: JavascriptMode.unrestricted,
         onWebViewCreated: (WebViewController webViewController) {
-          _controller.complete(webViewController);
+          _webViewController = webViewController;
         },
         onProgress: (int progress) {
           print('WebView is loading (progress : $progress%)');
@@ -43,14 +46,31 @@ class _HomeScreenState extends State<HomeScreen> {
           print('Page finished loading: $url');
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Text(
-          "Explore!",
-          style: TextStyle(fontSize: 9),
-        ),
-        backgroundColor: Colors.grey,
-      ),
+      floatingActionButton: isLoading
+          ? const CircularProgressIndicator()
+          : FloatingActionButton(
+              onPressed: () {
+                setState(() {
+                  isLoading = true;
+                });
+                setState(() {
+                  url = isOnMap
+                      ? 'https://flutter.dev'
+                      : 'https://www.maptoglobe.com/BJ2vHR3Iq';
+                  isOnMap = !isOnMap;
+                  _webViewController!.loadUrl(url);
+                });
+                setState(() {
+                  isLoading = false;
+                });
+              },
+              child: const Text(
+                "Explore!",
+                style: TextStyle(fontSize: 9),
+              ),
+              backgroundColor: Colors.grey,
+            ),
     );
   }
 }
+//TODO: fix circular progress indicator
