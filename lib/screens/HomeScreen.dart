@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Text(
+        child: const Text(
           "Explore!",
           style: TextStyle(fontSize: 9),
         ),
