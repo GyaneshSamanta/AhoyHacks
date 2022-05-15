@@ -1,12 +1,16 @@
 import 'package:ahoy_hacks/widgets/background_image.dart';
 import 'package:flutter/material.dart';
 
+import '../models/travel_details.dart';
+
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({Key? key}) : super(key: key);
   static const routeName = '/detailsScreen';
 
   @override
   Widget build(BuildContext context) {
+    TravelDetails _travelDetails =
+        ModalRoute.of(context)!.settings.arguments as TravelDetails;
     return SafeArea(
       child: Stack(
         children: [
@@ -18,10 +22,10 @@ class DetailsScreen extends StatelessWidget {
                 itemCount: 10,
                 itemBuilder: (context, index) {
                   return index == 03
-                      ? const Text(
-                          "Source to Destination🚢⚓",
+                      ? Text(
+                          "${_travelDetails.source} to ${_travelDetails.destination}🚢⚓",
                           textAlign: TextAlign.center,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                               color: Colors.white),

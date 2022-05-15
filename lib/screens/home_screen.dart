@@ -88,13 +88,17 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               FloatingActionButton(
+                  onPressed: () {},
+                  child: Icon(Icons.food_bank_outlined),
+                  backgroundColor: const Color(0xffAEAC70)),
+              FloatingActionButton(
                 onPressed: isLoading
                     ? null
                     : () {
-                        Navigator.of(context)
-                            .pushNamed(DetailsScreen.routeName,arguments: travelDetails);
+                        Navigator.of(context).pushNamed(DetailsScreen.routeName,
+                            arguments: travelDetails);
                       },
-                child: const Icon(Icons.question_mark),
+                child: const Icon(Icons.arrow_upward_sharp),
                 backgroundColor: const Color(0xffAEAC70),
               ),
               FloatingActionButton(
