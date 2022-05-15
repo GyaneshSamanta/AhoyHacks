@@ -27,17 +27,16 @@ Our solution, uses `map to globe` as a method to render our world map of the One
 ## Challenges we ran into 🏃‍♂️
 
 1. `Map to Globe` was down for about 24 hours since the start of the hackathon, and looking for alternatives that could suffice our solution was a big challenge. 
-2. 
+2. Flutter Null Safety 
 
 ## Accomplishments that we're proud of 🏅
-1. 
-2. 
+1. We made the each and every map using wonderdraft
 
 ## What we learned 🧠
-1. 
-2. 
-3.  
-
+1. Learnt wonderdraft 
+2. we desgined the map
+3. we added those customized maps onto the globe
+4.
 
 ## What's next ⏭
 
