@@ -19,101 +19,80 @@ class DetailsScreen extends StatelessWidget {
           Scaffold(
             backgroundColor: Colors.black12,
             body: ListView(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               children: [
-                SizedBox(height: 20),
                 Text(
-                  "${_travelDetails.source}",
+                  '${_travelDetails.source} to ${_travelDetails.destination} 🚢',
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                      fontSize: 28,
-                      decoration: TextDecoration.underline,
-                      decorationThickness: 2,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                      fontSize: 20,
+                      color: Colors.amber,
+                      fontWeight: FontWeight.bold),
                 ),
-                Text(
-                  "to",
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      decoration: TextDecoration.underline,
-                      decorationThickness: 2,
-                      color: Colors.white),
-                ),
-                Text(
-                  "${_travelDetails.destination}",
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                      fontSize: 28,
-                      decoration: TextDecoration.underline,
-                      decorationThickness: 2,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                ),
-                SizedBox(height: 17),
-                Text(
+                const SizedBox(height: 20),
+                const Text(
                   "⛵ Source Information",
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
-                    fontSize: 25,
+                    fontSize: 16,
                     height: 1.5,
                     decorationColor: Colors.white,
                   ),
                 ),
+                const SizedBox(height: 8,),
                 Text(
                   "${_travelDetails.sourceInfo}",
-                  style: TextStyle(color: Colors.white, fontSize: 15),
+                  style: TextStyle(color: Colors.white60, fontSize: 14,),
                 ),
-                SizedBox(height: 5),
-                Text(
+                const SizedBox(height: 15),
+                const Text(
                   "🛳️ Destination Information",
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
-                    fontSize: 25,
+                    fontSize: 16,
                     height: 1.5,
                     decorationColor: Colors.white,
                   ),
                 ),
+                const SizedBox(height: 8,),
                 Text(
                   "${_travelDetails.destInfo}",
-                  style: TextStyle(color: Colors.white, fontSize: 15),
+                  style: TextStyle(color: Colors.white60, fontSize: 14,),
                 ),
-                SizedBox(height: 5),
-                Text(
+                const SizedBox(height: 15),
+                const Text(
                   "🏴‍☠️ Let's know about the Pirates",
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
-                    fontSize: 25,
+                    fontSize: 16,
                     height: 1.5,
                     decorationColor: Colors.white,
                   ),
                 ),
+                const SizedBox(height: 8,),
                 Text(
                   "${_travelDetails.pirates}",
-                  style: TextStyle(color: Colors.white, fontSize: 15),
+                  style: const TextStyle(color: Colors.white60, fontSize: 14,),
                 ),
-                SizedBox(height: 5),
-                Text(
+                const SizedBox(height: 15),
+                const Text(
                   "🛎️ Some Interesting Facts",
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
-                    fontSize: 25,
+                    fontSize: 16,
                     height: 1.5,
-                    // decoration: TextDecoration.underline,
                     decorationColor: Colors.white,
-                    // decorationThickness: 2,
                   ),
                 ),
+                const SizedBox(height: 8,),
                 Text(
                   "${_travelDetails.trivia}",
-                  style: TextStyle(color: Colors.white, fontSize: 15),
+                  style: TextStyle(color: Colors.white60, fontSize: 14,),
                 ),
-                SizedBox(height: 5),
               ],
             ),
           ),

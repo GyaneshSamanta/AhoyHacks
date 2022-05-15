@@ -89,7 +89,13 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               FloatingActionButton(
                   heroTag: 'Restaurants',
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      mapUrl = 'https://www.maptoglobe.com/SJUgBQA89';
+                      _webViewController!.loadUrl(mapUrl);
+                      print("Map loaded: $mapUrl");
+                    });
+                  },
                   child: Icon(Icons.food_bank_outlined),
                   backgroundColor: const Color(0xffAEAC70)),
               FloatingActionButton(
