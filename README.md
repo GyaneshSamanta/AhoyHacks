@@ -27,7 +27,7 @@ We analyzed the entire anime series to plot the seas where pirates are generally
 
 ## How we built it 🔧
 
-Our solution, uses `map to globe` as a method to render our world map of the One Piece world. 
+Our solution, uses `map to globe` as a method to render our world map of the One Piece world. We built an app using flutter and made maps using wonderdraft .
 
 ## Tech Stack 🔨
 1. Flutter
@@ -40,7 +40,6 @@ Our solution, uses `map to globe` as a method to render our world map of the One
 ## Challenges we ran into 🏃‍♂️
 
 1. `Map to Globe` was down for about 24 hours since the start of the hackathon, and looking for alternatives that could suffice our solution was a big challenge. 
-2. Flutter Null Safety 
 
 ## Accomplishments that we're proud of 🏅
 1. We made the each and every map using wonderdraft
