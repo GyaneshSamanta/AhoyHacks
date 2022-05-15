@@ -18,8 +18,8 @@ dependencies:
   google_fonts: ^2.3.1
   font_awesome_flutter: ^9.2.0
   http: ^0.13.4
-  flutter_appauth: ^2.4.2
-  flutter_secure_storage: ^5.0.2
+ # flutter_appauth: ^2.4.2
+ # flutter_secure_storage: ^5.0.2
 
 dev_dependencies:
   flutter_test:
