@@ -88,10 +88,12 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               FloatingActionButton(
+                heroTag: 'Restaurants',
                   onPressed: () {},
                   child: Icon(Icons.food_bank_outlined),
                   backgroundColor: const Color(0xffAEAC70)),
               FloatingActionButton(
+                heroTag: 'Details',
                 onPressed: isLoading
                     ? null
                     : () {
@@ -102,6 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 backgroundColor: const Color(0xffAEAC70),
               ),
               FloatingActionButton(
+                heroTag: 'Explore',
                 onPressed: isLoading
                     ? null
                     : () {
@@ -111,8 +114,23 @@ class _HomeScreenState extends State<HomeScreen> {
                         setState(() {
                           travelDetails =
                               Provider.of<Travels>(context).travelDetails;
-                          mapUrl = travelDetails!.mapUrl;
-                          _webViewController!.loadUrl(mapUrl);
+                          if (travelDetails == null) {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: const Text(
+                                'Cannot pass through the calm belt or the grindline',
+                              ),
+                              action: SnackBarAction(
+                                  label: 'Dismiss',
+                                  onPressed: () {
+                                    ScaffoldMessenger.of(context)
+                                        .hideCurrentSnackBar();
+                                  }),
+                            ));
+                            print("Null hai bhai");
+                          } else {
+                            mapUrl = travelDetails!.mapUrl;
+                            _webViewController!.loadUrl(mapUrl);
+                          }
                         });
                         setState(() {
                           isLoading = false;

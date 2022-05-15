@@ -9,8 +9,7 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TravelDetails _travelDetails =
-        ModalRoute.of(context)!.settings.arguments as TravelDetails;
+    TravelDetails? _travelDetails = (ModalRoute.of(context)!.settings.arguments?? TravelDetails(mapUrl: 'null')) as TravelDetails;
     return SafeArea(
       child: Stack(
         children: [
@@ -21,9 +20,9 @@ class DetailsScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(10),
                 itemCount: 10,
                 itemBuilder: (context, index) {
-                  return index == 03
+                  return index == 0
                       ? Text(
-                          "${_travelDetails.source} to ${_travelDetails.destination}🚢⚓",
+                          "sauce to d🚢⚓",
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                               fontSize: 20,

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
+import 'package:collection/collection.dart';
 
 import '../models/travel_details.dart';
 
@@ -110,9 +111,11 @@ class Travels with ChangeNotifier {
     ),
   ];
 
-  TravelDetails get travelDetails {
-    return travels.firstWhere((travel) =>
-        (travel.source == source && travel.destination == destination) ||
+  TravelDetails? get travelDetails {
+    TravelDetails? tt= travels.firstWhereOrNull((travel) =>
+    (travel.source == source && travel.destination == destination) ||
         (travel.source == destination && travel.destination == source));
+    print("Travel details: $tt");
+    return tt;
   }
 }
