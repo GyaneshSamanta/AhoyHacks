@@ -23,8 +23,7 @@ We analyzed the entire anime series to plot the seas where pirates are generally
 
 
 ## How the App Looks 🤜🔥🤛
-![Untitled design](https://user-images.githubusercontent.com/75165587/168472670-f59fafb1-62ee-4f33-b82a-29782ca6c28d.png)
-
+![Untitled design](https://user-images.githubusercontent.com/75165587/168473355-4953b97c-8d15-4376-bb2a-2414830e1924.png)
 
 ## How we built it 🔧
 
