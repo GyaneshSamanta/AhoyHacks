@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         });
                       },
                 child: const Text(
-                  "Explore!",
+                  "Go!",
                   style: TextStyle(fontSize: 9),
                 ),
                 backgroundColor: const Color(0xffAEAC70),
