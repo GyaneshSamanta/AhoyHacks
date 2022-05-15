@@ -12,6 +12,10 @@ The newly crowned Pirate King, Monkey D. Luffy has set sail in the world to conq
 
 TBA
 
+## How the App Looks 🤜🔥🤛
+![Untitled design](https://user-images.githubusercontent.com/75165587/168472670-f59fafb1-62ee-4f33-b82a-29782ca6c28d.png)
+
+
 ## How we built it 🔧
 
 Our solution, uses `map to globe` as a method to render our world map of the One Piece world. 
@@ -36,9 +40,16 @@ Our solution, uses `map to globe` as a method to render our world map of the One
 1. Learnt wonderdraft 
 2. we desgined the map
 3. we added those customized maps onto the globe
-4.
 
-## What's next ⏭
+## Collaborators 🤖
 
-1. 
-2.  
+Only developers.
+| Name      | GitHub Profile     |
+| :------------- | :----------: |
+|  Gyanesh Samanta   | [GitHub](https://www.github.com/gyanesh-samanta-123) |
+|  Eshaan Bhardwaj   | [GitHub](https://github.com/Eshaan-B) |
+|  Chetas Shree Madhusudhan   | [GitHub](https://github.com/ChetasShree) |
+
+
+
+
