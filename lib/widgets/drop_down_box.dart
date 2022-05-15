@@ -27,9 +27,8 @@ class _DropdownBoxState extends State<DropdownBox> {
                 .updateSource(selectedValue)
             : Provider.of<Travels>(context, listen: false)
                 .updateDestination(selectedValue);
+        _dropdownValue = selectedValue;
       });
-
-      _dropdownValue = selectedValue;
     }
   }
 

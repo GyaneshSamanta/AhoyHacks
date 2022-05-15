@@ -14,10 +14,10 @@ class DetailsScreen extends StatelessWidget {
           Scaffold(
               backgroundColor: Colors.black12,
               body: ListView.builder(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 itemCount: 10,
                 itemBuilder: (context, index) {
-                  return index == 0
+                  return index == 03
                       ? const Text(
                           "Source to Destination🚢⚓",
                           textAlign: TextAlign.center,

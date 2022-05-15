@@ -2,8 +2,10 @@ import 'dart:io';
 import '../widgets/drop_down_box.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-
 import 'details_screen.dart';
+import 'package:provider/provider.dart';
+import '../providers/travels.dart';
+import '../models/travel_details.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = '/homeScreen';
@@ -20,11 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
   WebViewController? _webViewController;
   bool isLoading = false;
   bool isOnMap = true;
-  var url = 'https://www.maptoglobe.com/H1PWi_TI5#q';
-
-  String dropdownvalue = 'Item 1';
-
-  // List of items in our dropdown menu
+  var mapUrl = 'https://www.maptoglobe.com/H1PWi_TI5';
+  TravelDetails? travelDetails;
 
   @override
   void initState() {
@@ -40,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Stack(
           children: [
             WebView(
-              initialUrl: url,
+              initialUrl: mapUrl,
               javascriptMode: JavascriptMode.unrestricted,
               onWebViewCreated: (WebViewController webViewController) {
                 _webViewController = webViewController;
@@ -89,9 +88,12 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               FloatingActionButton(
-                onPressed: isLoading ? null : () {
-                  Navigator.of(context).pushNamed(DetailsScreen.routeName);
-                },
+                onPressed: isLoading
+                    ? null
+                    : () {
+                        Navigator.of(context)
+                            .pushNamed(DetailsScreen.routeName,arguments: travelDetails);
+                      },
                 child: const Icon(Icons.question_mark),
                 backgroundColor: const Color(0xffAEAC70),
               ),
@@ -99,20 +101,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: isLoading
                     ? null
                     : () {
-                  setState(() {
-                    isLoading = true;
-                  });
-                  setState(() {
-                    url = isOnMap
-                        ? 'https://flutter.dev'
-                        : 'https://www.maptoglobe.com/H1PWi_TI5#';
-                    isOnMap = !isOnMap;
-                    _webViewController!.loadUrl(url);
-                  });
-                  setState(() {
-                    isLoading = false;
-                  });
-                },
+                        setState(() {
+                          isLoading = true;
+                        });
+                        setState(() {
+                          travelDetails =
+                              Provider.of<Travels>(context).travelDetails;
+                          mapUrl = travelDetails!.mapUrl;
+                          _webViewController!.loadUrl(mapUrl);
+                        });
+                        setState(() {
+                          isLoading = false;
+                        });
+                      },
                 child: const Text(
                   "Explore!",
                   style: TextStyle(fontSize: 9),

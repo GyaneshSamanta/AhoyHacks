@@ -6,7 +6,6 @@ import '../models/travel_details.dart';
 class Travels with ChangeNotifier {
   String? source;
   String? destination;
-  String? mapUrl;
 
   void updateSource(String src) {
     source = src;
@@ -28,7 +27,6 @@ class Travels with ChangeNotifier {
       info: " name of Shakky's husband? - Rayleigh.",
       mapUrl: " https://www.maptoglobe.com/B1qIrQALq",
     ),
-
     TravelDetails(
       source:
           "he Oykot Kingdom is a country in the East Blue where Bell-mère first met Nami and Nojiko.",
@@ -38,7 +36,6 @@ class Travels with ChangeNotifier {
       info: "they were the first enemy pirates Luffy was seen to encounter.",
       mapUrl: " https://www.maptoglobe.com/H1nnBQAUc",
     ),
-
     TravelDetails(
       source:
           "The Oykot Kingdom is a country in the East Blue where Bell-mère first met Nami and Nojiko.",
@@ -60,7 +57,6 @@ class Travels with ChangeNotifier {
         info:
             "Though Sanji has a deep admiration of Reina, she does not take advantage of him like Nami.",
         mapUrl: "https://www.maptoglobe.com/HyGmL7CUc"),
-
 // 5. Reina de whiteland to Rubeck -
     TravelDetails(
         source: "Located in North Blue",
@@ -70,7 +66,6 @@ class Travels with ChangeNotifier {
         info:
             "Nothing is known about the country's geography because it has yet to make an appearance.",
         mapUrl: " https://www.maptoglobe.com/Sk7LImA89"),
-
 // 6. Reinade Deul to Lvneel -
     TravelDetails(
         source: "Located in North Blue",
@@ -80,7 +75,6 @@ class Travels with ChangeNotifier {
             "Last known, there was a contest between the Straw Hat Pirates and the Foxy Pirates, called the 'Davy Back Fight' on these waters.",
         info: "Zeff, one of the deadliest pirates, runs Baratie.",
         mapUrl: " https://www.maptoglobe.com/rkBqIQ089"),
-
 // 7. Reinade Deul to Rubek -
     TravelDetails(
         source: "Located in North Blue",
@@ -89,7 +83,6 @@ class Travels with ChangeNotifier {
             "Last known, there was a contest between the Straw Hat Pirates and the Foxy Pirates, called the 'Davy Back Fight' on these waters.",
         info: "Who is the navigator for Luffy and his crew? - Nami",
         mapUrl: " https://www.maptoglobe.com/SJ93LXA8c"),
-
 // 8. Reina de Ballywood to Toroa -
     TravelDetails(
         source:
@@ -100,4 +93,11 @@ class Travels with ChangeNotifier {
         info: "What is the village Luffy was born in? - Foosha Village",
         mapUrl: " https://www.maptoglobe.com/Byj-vX085"),
   ];
+
+
+  TravelDetails get travelDetails {
+    return travels.firstWhere((travel) =>
+        (travel.source == source && travel.destination == destination) ||
+        (travel.source == destination && travel.destination == source));
+  }
 }

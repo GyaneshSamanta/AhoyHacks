@@ -3,7 +3,7 @@ class TravelDetails {
   String? destination;
   String? sourceInfo;
   String? destInfo;
-  String? mapUrl;
+  String mapUrl;
   String? info;
   String? pirates;
 
@@ -12,7 +12,7 @@ class TravelDetails {
     this.destination,
     this.sourceInfo,
     this.destInfo,
-    this.mapUrl,
+    required this.mapUrl,
     this.info,
     this.pirates,
   });
