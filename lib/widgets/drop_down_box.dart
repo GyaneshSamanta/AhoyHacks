@@ -13,10 +13,17 @@ class DropdownBox extends StatefulWidget {
 class _DropdownBoxState extends State<DropdownBox> {
   String? _dropdownValue;
   List<String> dropDownOptions = [
-    "Dash",
-    "Sparky",
-    "Snoo",
-    "Clippy",
+    "Centaurea",
+    "Oykot",
+    "Reina de whiteland",
+    "Reinade Deul",
+    "Reina de Ballywood",
+    "reino de briss",
+    "Base da Alvida",
+    "Illa da Cabra",
+    "lvneel",
+    "Rubeck",
+    "Toroa",
   ];
 
   void dropdownCallback(String? selectedValue) {
