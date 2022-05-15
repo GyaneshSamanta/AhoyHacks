@@ -9,51 +9,114 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TravelDetails? _travelDetails = (ModalRoute.of(context)!.settings.arguments?? TravelDetails(mapUrl: 'null')) as TravelDetails;
+    TravelDetails? _travelDetails =
+        (ModalRoute.of(context)!.settings.arguments ??
+            TravelDetails(mapUrl: 'null')) as TravelDetails;
     return SafeArea(
       child: Stack(
         children: [
           const BackgroundImage(image: 'assets/images/stars.jpg'),
           Scaffold(
-              backgroundColor: Colors.black12,
-              body: ListView.builder(
-                padding: const EdgeInsets.all(10),
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return index == 0
-                      ? Text(
-                          "sauce to d🚢⚓",
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        )
-                      : Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Text(
-                              "Title",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                  color: Colors.grey),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-                              style:
-                                  TextStyle(fontSize: 13, color: Colors.grey),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                          ],
-                        );
-                },
-              )),
+            backgroundColor: Colors.black12,
+            body: ListView(
+              children: [
+                SizedBox(height: 20),
+                Text(
+                  "${_travelDetails.source}",
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                      fontSize: 28,
+                      decoration: TextDecoration.underline,
+                      decorationThickness: 2,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+                Text(
+                  "to",
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.underline,
+                      decorationThickness: 2,
+                      color: Colors.white),
+                ),
+                Text(
+                  "${_travelDetails.destination}",
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                      fontSize: 28,
+                      decoration: TextDecoration.underline,
+                      decorationThickness: 2,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+                SizedBox(height: 17),
+                Text(
+                  "⛵ Source Information",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                    fontSize: 25,
+                    height: 1.5,
+                    decorationColor: Colors.white,
+                  ),
+                ),
+                Text(
+                  "${_travelDetails.sourceInfo}",
+                  style: TextStyle(color: Colors.white, fontSize: 15),
+                ),
+                SizedBox(height: 5),
+                Text(
+                  "🛳️ Destination Information",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                    fontSize: 25,
+                    height: 1.5,
+                    decorationColor: Colors.white,
+                  ),
+                ),
+                Text(
+                  "${_travelDetails.destInfo}",
+                  style: TextStyle(color: Colors.white, fontSize: 15),
+                ),
+                SizedBox(height: 5),
+                Text(
+                  "🏴‍☠️ Let's know about the Pirates",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                    fontSize: 25,
+                    height: 1.5,
+                    decorationColor: Colors.white,
+                  ),
+                ),
+                Text(
+                  "${_travelDetails.pirates}",
+                  style: TextStyle(color: Colors.white, fontSize: 15),
+                ),
+                SizedBox(height: 5),
+                Text(
+                  "🛎️ Some Interesting Facts",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                    fontSize: 25,
+                    height: 1.5,
+                    // decoration: TextDecoration.underline,
+                    decorationColor: Colors.white,
+                    // decorationThickness: 2,
+                  ),
+                ),
+                Text(
+                  "${_travelDetails.trivia}",
+                  style: TextStyle(color: Colors.white, fontSize: 15),
+                ),
+                SizedBox(height: 5),
+              ],
+            ),
+          ),
         ],
       ),
     );
