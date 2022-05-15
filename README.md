@@ -48,8 +48,8 @@ Our solution, uses `map to globe` as a method to render our world map of the One
 
 ## What we learned 🧠
 1. Learnt wonderdraft 
-2. we desgined the map
-3. we added those customized maps onto the globe
+2. We desgined the map
+3. We added those customized maps onto the globe
 
 ## What's next ⏭
  1. For future additions we aim to dynamically show the positioning of pirate ships so that we hackers could safely sail away from them.
