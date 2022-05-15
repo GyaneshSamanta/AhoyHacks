@@ -88,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               FloatingActionButton(
-                heroTag: 'Restaurants',
+                  heroTag: 'Restaurants',
                   onPressed: () {},
                   child: Icon(Icons.food_bank_outlined),
                   backgroundColor: const Color(0xffAEAC70)),
@@ -97,8 +97,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: isLoading
                     ? null
                     : () {
-                        Navigator.of(context).pushNamed(DetailsScreen.routeName,
-                            arguments: travelDetails);
+                        travelDetails =
+                            Provider.of<Travels>(context, listen: false)
+                                .travelDetails;
+                        if (travelDetails == null) {
+                          print("Null hai bhai");
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: const Text(
+                              'Cannot pass through the calm belt or the grindline',
+                            ),
+                            action: SnackBarAction(
+                                label: 'Dismiss',
+                                onPressed: () {
+                                  ScaffoldMessenger.of(context)
+                                      .hideCurrentSnackBar();
+                                }),
+                          ));
+                        } else {
+                          Navigator.of(context).pushNamed(
+                              DetailsScreen.routeName,
+                              arguments: travelDetails);
+                        }
                       },
                 child: const Icon(Icons.arrow_upward_sharp),
                 backgroundColor: const Color(0xffAEAC70),
@@ -113,7 +132,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         });
                         setState(() {
                           travelDetails =
-                              Provider.of<Travels>(context).travelDetails;
+                              Provider.of<Travels>(context, listen: false)
+                                  .travelDetails;
                           if (travelDetails == null) {
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                               content: const Text(

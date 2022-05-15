@@ -1,6 +1,5 @@
 // import 'package:ahoy_hacks/screens/forgot_password.dart';
 // import 'package:ahoy_hacks/screens/login_screen.dart';
-import 'package:ahoy_hacks/screens/random.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
