@@ -39,7 +39,7 @@ class Travels with ChangeNotifier {
       pirates:
           "The Alvida Pirates were a group of pirates led by the female pirate 'Iron Mace' Alvida are known to sail these waters.",
       trivia: "they were the first enemy pirates Luffy was seen to encounter.",
-      mapUrl: " https://www.maptoglobe.com/H1nnBQAUc",
+      mapUrl: "https://www.maptoglobe.com/H1nnBQAUc",
     ),
     TravelDetails(
       source: "Oykot",
@@ -52,7 +52,7 @@ class Travels with ChangeNotifier {
           "The Alvida Pirates were a group of pirates led by the female pirate 'Iron Mace' Alvida are known to sail these waters. ",
       trivia:
           "Chopper realizes that he only has three days to live and they decide to make him happy for those three days, but they don't tell him that he has three days to live.",
-      mapUrl: " https://www.maptoglobe.com/H1MWUQAU5",
+      mapUrl: "https://www.maptoglobe.com/H1MWUQAU5",
     ),
     TravelDetails(
       source: "Reina de whiteland",
@@ -64,7 +64,7 @@ class Travels with ChangeNotifier {
           "Monkey D. Luffy was last seen sailing towards lvneel, last spotted at Barite Sea Restaurant.",
       trivia:
           "Though Sanji has a deep admiration of Reina, she does not take advantage of him like Nami.",
-      mapUrl: " https://www.maptoglobe.com/HyGmL7CUc",
+      mapUrl: "https://www.maptoglobe.com/HyGmL7CUc",
     ),
     TravelDetails(
       source: "Reina de whiteland",
@@ -75,7 +75,7 @@ class Travels with ChangeNotifier {
           "Diez Barrels was going to trade the Ope Ope no Mi to the Marines in exchange for a hefty amount of money. So be on the lookout for their flag!",
       trivia:
           "Nothing is known about the country's geography because it has yet to make an appearance.",
-      mapUrl: " https://www.maptoglobe.com/Sk7LImA89",
+      mapUrl: "https://www.maptoglobe.com/Sk7LImA89",
     ),
     TravelDetails(
       source: "Reinade Deul",
@@ -86,7 +86,7 @@ class Travels with ChangeNotifier {
       pirates:
           "Last known, there was a contest between the Straw Hat Pirates and the Foxy Pirates, called the 'Davy Back Fight' on these waters.",
       trivia: "Zeff, one of the deadliest pirates, runs Baratie.",
-      mapUrl: " https://www.maptoglobe.com/rkBqIQ089",
+      mapUrl: "https://www.maptoglobe.com/rkBqIQ089",
     ),
     TravelDetails(
       source: "Reinade Deul",

@@ -150,6 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           } else {
                             mapUrl = travelDetails!.mapUrl;
                             _webViewController!.loadUrl(mapUrl);
+                            print("Map loaded: $mapUrl");
                           }
                         });
                         setState(() {
