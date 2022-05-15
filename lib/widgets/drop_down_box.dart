@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../providers/travels.dart';
 
 class DropdownBox extends StatefulWidget {
   DropdownBox({Key? key, required this.hintText}) : super(key: key);
@@ -20,8 +22,14 @@ class _DropdownBoxState extends State<DropdownBox> {
   void dropdownCallback(String? selectedValue) {
     if (selectedValue is String) {
       setState(() {
-        _dropdownValue = selectedValue;
+        widget.hintText == "Source"
+            ? Provider.of<Travels>(context, listen: false)
+                .updateSource(selectedValue)
+            : Provider.of<Travels>(context, listen: false)
+                .updateDestination(selectedValue);
       });
+
+      _dropdownValue = selectedValue;
     }
   }
 

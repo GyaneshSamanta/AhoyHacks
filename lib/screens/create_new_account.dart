@@ -91,14 +91,14 @@ class CreateNewAccount extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                       const  Text(
+                        const Text(
                           'Already have an account?',
                           style: TextStyle(
                               fontSize: 17, color: Colors.white, height: 1.5),
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, '/');
+                            Navigator.of(context).pop();
                           },
                           child: const Text('Login',
                               style: TextStyle(
