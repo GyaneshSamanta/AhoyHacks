@@ -1,10 +1,10 @@
-## Winner
-### "X Marks The Spot" category prize for the best hack built on the theme of the hackathon i.e "Pirates". 
+## Winner, Ahoy Hacks 2022
+#### "X Marks The Spot" category prize for the best hack built on the theme of the hackathon i.e "Pirates". 
 Category Prize awarded - Snapchat Spectacles
 
 ![winners-square](Repository-Assests/winners-square.png)
 
-![AhoyHacks](Repository-Assests/Cover.png) 
+
 
 ## Inspiration💡
 The newly crowned Pirate King, Monkey D. Luffy has set sail in the world to conquer the 4 seas. He sails now towards the grand line to steal the one piece. For non pirates *(Hackers)* we need to find the safest route through the seas to get to our destination wwithout being attacked by their fearsome crew. 
@@ -64,6 +64,8 @@ Only developers.
 |  Eshaan Bhardwaj   | [GitHub](https://github.com/Eshaan-B) |
 |  Chetas Shree Madhusudhan   | [GitHub](https://github.com/ChetasShree) |
 
+
+![AhoyHacks](Repository-Assests/Cover.png) 
 
 
 
