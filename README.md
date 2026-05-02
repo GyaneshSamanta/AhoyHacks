@@ -1,73 +1,94 @@
-## Winner, Ahoy Hacks 2022
-#### "X Marks The Spot" category prize for the best hack built on the theme of the hackathon i.e "Pirates". 
-Category Prize awarded - Snapchat Spectacles
+# AhoyHacks — Mapa da One Piece
 
+**A Flutter app that charts the safest pirate-free route across the world of One Piece — winner of the "X Marks The Spot" prize at Ahoy! Hacks 2022.**
 
+![Winner](https://img.shields.io/badge/Ahoy!_Hacks_2022-Winner-gold)
+![Flutter](https://img.shields.io/badge/Flutter-Dart-blue)
+![Platform](https://img.shields.io/badge/Platform-Android-green)
 
-![winners-square](Repository-Assests/winners-square.png)
+![Winners](Repository-Assests/winners-square.png)
 
-Check out the project video here - [YouTube](https://youtu.be/ddZyEROSzJE)
+Demo video: [YouTube](https://youtu.be/ddZyEROSzJE)
 
-## Inspiration💡
-The newly crowned Pirate King, Monkey D. Luffy has set sail in the world to conquer the 4 seas. He sails now towards the grand line to steal the one piece. For non pirates *(Hackers)* we need to find the safest route through the seas to get to our destination wwithout being attacked by their fearsome crew. 
+## About
 
-![onepiece](Repository-Assests/luffy.jpg)  
+- **What:** A mobile navigation app set in the One Piece universe. Pick a start and a destination, and the app projects a hand-drawn world map onto a globe and traces the safest pirate-free route between them.
+- **Who:** Built by Gyanesh Samanta with teammates **Eshaan Bhardwaj** ([@Eshaan-B](https://github.com/Eshaan-B)) and **Chetas Shree Madhusudhan** ([@ChetasShree](https://github.com/ChetasShree)).
+- **When:** Hacked together 2022-05-13 to 2022-05-15, polished through 2022-06-10.
+- **Where:** Built during **Ahoy! Hacks 2022**, where it won the "X Marks The Spot" category prize (Snapchat Spectacles).
+- **Why:** The newly crowned Pirate King has set sail — non-pirates need a way to cross the Grand Line without picking fights with his fearsome crew.
 
-## What it does 🧭
-We designed an android app with the help of flutter. Once you open the app you are delightfully bought into the world of pirates with an awesome UI. Once in it, you can choose your starting destination and end destination and the map changes to show you the safest route possible to the given destination. 
+## The Story
 
-You will see the world map as per the specifications in the anime one piece, we call this place mapa da one piece. In the day and age where ferocious pirates rule the 4 seas, it is important for us hackers to find a way of travel that can take us to our destination without picking up fights with the mighty pirates.
+We watched the entire One Piece anime arc to identify the seas where pirate fleets are most active, then redrew the world map of the show in **Wonderdraft** so we could mark every safe-passage corridor by hand. The custom map was projected onto a 3D globe via the `map to globe` service to give navigation an immersive, planet-spinning feel rather than a flat 2D rectangle.
 
-We designed our mapa da one piece using wonderdraft which is extremely easy o use for noob navigators and cartographers as ourselves,and maped out the world and worked on creating the safe route paths. 
+The app itself is a Flutter project with a themed pirate UI: pick a source and destination, and the globe re-renders to show the recommended route between them. Along the way we surface trivia about each leg — including in-universe stops like **Baratie**, the floating sea restaurant, in place of the petrol pumps a normal map app would suggest.
 
-The generated map files were then projected to a globe to give the app an immersive experience that you can see here. You can view the rest of the globe to check other parts of the world. 
+The biggest curveball: **`map to globe` went down for roughly the first 24 hours** of the hackathon, which forced an emergency hunt for an alternative rendering pipeline. We got it back online in time, finished the app, and walked away with the category prize.
 
-Depending on the source and destination entered by the user, the globe changes and shows us the specific route.
+## Gallery
 
-We analyzed the entire anime series to plot the seas where pirates are generally known to sail and put them up as a trivia section where you get more details on your journey. Google maps had petrol pumps as stops and we have Baratie, the sea restaurant. 
+![App preview](https://user-images.githubusercontent.com/75165587/168473355-4953b97c-8d15-4376-bb2a-2414830e1924.png)
 
+![Inspiration](Repository-Assests/luffy.jpg)
 
-## How the App Looks 🤜🔥🤛
-![Untitled design](https://user-images.githubusercontent.com/75165587/168473355-4953b97c-8d15-4376-bb2a-2414830e1924.png)
+![Cover](Repository-Assests/Cover.png)
 
-## How we built it 🔧
+---
 
-Our solution, uses `map to globe` as a method to render our world map of the One Piece world. We built an app using flutter and dart language and made maps using wonderdraft.
+## Tech Stack
 
-## Tech Stack 🔨
-1. Flutter
-2. Dart
-3. Map to Globe
-4. Wonderdraft
-5. Git
-6. GitHub
+- **Framework:** Flutter (Dart, SDK >=2.16.2 <3.0.0)
+- **Key packages:** `webview_flutter`, `google_fonts`, `font_awesome_flutter`, `http`, `provider`
+- **Map rendering:** `map to globe` (3D projection)
+- **Cartography:** Wonderdraft (hand-drawn maps)
+- **Tooling:** Git, GitHub
 
-## Challenges we ran into 🏃‍♂️
+## Repo Structure
 
-1. `Map to Globe` was down for about 24 hours since the start of the hackathon, and looking for alternatives that could suffice our solution was a big challenge. 
+```
+AhoyHacks/
+├── lib/                    # Flutter / Dart source
+├── android/  ios/          # native shells
+├── assets/images/          # bundled image assets
+├── Maps/                   # Wonderdraft source maps
+├── Trivia/                 # in-app trivia content
+├── Repository-Assests/     # hero/cover images for this README
+├── pubspec.yaml            # Flutter package manifest
+└── test/                   # widget tests
+```
 
-## Accomplishments that we're proud of 🏅
-1. We made the each and every map using wonderdraft
+## Getting Started
 
-## What we learned 🧠
-1. Learnt wonderdraft 
-2. We desgined the map
-3. We added those customized maps onto the globe
+```bash
+# 1. Clone
+git clone https://github.com/GyaneshSamanta/AhoyHacks.git
+cd AhoyHacks
 
-## What's next ⏭
- 1. For future additions we aim to dynamically show the positioning of pirate ships so that we hackers could safely sail away from them.
+# 2. Make sure Flutter is installed (https://docs.flutter.dev/get-started/install)
+flutter --version
 
-## Collaborators 🤖
+# 3. Fetch packages
+flutter pub get
 
-Only developers.
-| Name      | GitHub Profile     |
-| :------------- | :----------: |
-|  Gyanesh Samanta   | [GitHub](https://www.github.com/gyanesh-samanta-123) |
-|  Eshaan Bhardwaj   | [GitHub](https://github.com/Eshaan-B) |
-|  Chetas Shree Madhusudhan   | [GitHub](https://github.com/ChetasShree) |
+# 4. Run on a connected Android device or emulator
+flutter run
+```
 
+## Contributing
 
-![AhoyHacks](Repository-Assests/Cover.png) 
+This is a hackathon repo and unlikely to see active development. Issues and PRs are welcome if you'd like to revive it — particularly the planned feature to **dynamically plot live pirate-ship positions** so users can sail around them.
 
+## License
 
+No formal license has been published. All code and art are the work of the three contributors above; please ask before reusing.
 
+## Credits
+
+| Name | GitHub |
+| :--- | :--- |
+| Gyanesh Samanta | [@GyaneshSamanta](https://github.com/GyaneshSamanta) |
+| Eshaan Bhardwaj | [@Eshaan-B](https://github.com/Eshaan-B) |
+| Chetas Shree Madhusudhan | [@ChetasShree](https://github.com/ChetasShree) |
+
+One Piece, its world, and its characters belong to Eiichiro Oda / Shueisha — used here strictly as fan-project inspiration.
